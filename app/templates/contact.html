@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+{% block body%}
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="max-width">
+      <h2 class="title">Contact Me</h2>
+      <div class="contact-content">
+        <div class="column left">
+          <div class="text">Get in Touch</div>
+          <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be a part of your visions. Email me with any questions or inquiries. I'll happy to answer your questions and set up a meeting with you.</p>
+          <div class="icons">
+
+            <a href="#">
+              <div class="row">
+                <i class="fa-solid fa-user-large"></i>
+                <div class="info">
+                  <div class="head">Name</div>
+                  <div class="sub-title"><a href="#" style="text-decoration: none; color: #333;"> Abdul Salam</a></div>
+                </div>
+              </div>
+            </a>
+
+            <div class="row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="info">
+                <div class="head"> Address</div>
+                <div class="sub-title"> Badin, Sindh, Pakistan</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="info">
+                <div class="head">Email</div>
+                <div class="sub-title"><a href="mailto:#" style="text-decoration: none; color: #333;"> example@example.com</a></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <i class="bi bi-translate"></i>
+              <div class="info">
+                <div class="head">Language Known</div>
+                <div class="sub-title">Sindhi, English, Urdu</div>
+              </div>
+            </div>
+
+            <br>
+
+            <!-- Social -->
+            <div class="social-menu">
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#" title="Get Educate with Us"><i class="fa-solid fa-graduation-cap"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reach -->
+        <div class="column right"><h2>{{ n }}
+        </h2>
+          <div class="text">Message me</div>
+          <form method="POST" action="{% url 'contact' %}">
+
+
+            {% csrf_token %}
+            <div class="fields">
+              <div class="field name">
+                <input type="text" placeholder="Your Name" name="name" required>
+              </div>
+              <div class="field email">
+                <input type="email" placeholder="Your Email" name="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Subject" name="text" required>
+            </div>
+            <div class="field textarea">
+              <textarea cols="30" rows="10" placeholder="Message.."  name="msg" required></textarea>
+            </div>
+            <div class="button-area">
+              <button type="submit">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src='https://kit.fontawesome.com/3b57a2a2a7.js'></script>
+  <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+  
+{% endblock%}
